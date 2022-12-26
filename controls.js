@@ -1,12 +1,21 @@
 console.log("This is JS for controls");
 class Controls{
-    constructor(){
+    constructor(type){
         this.forward = false;
         this.left=false;
         this.right=false;
         this.reverse= false;
 
-        this.#addKeyboardListeners();
+        switch(type){
+            case "KEYS":
+                this.#addKeyboardListeners();
+                break;
+            case "DUMMY":
+                this.forward= true;
+                break;
+        }
+
+        // this.#addKeyboardListeners();
     }
 
 //Methods inside the controls class # means private method
